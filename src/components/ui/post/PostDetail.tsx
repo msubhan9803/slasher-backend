@@ -499,8 +499,6 @@ function PostDetail({
   const getFeedPostDetail = useCallback((feedPostId: string) => {
     feedPostDetail(feedPostId)
       .then((res) => {
-        console.log('📺 res: ', res);
-
         if (postType === 'news') {
           if (partnerId !== res.data.rssfeedProviderId?._id && !queryCommentId) {
             navigate(`/app/news/partner/${res.data.rssfeedProviderId?._id}/posts/${postId}`);
