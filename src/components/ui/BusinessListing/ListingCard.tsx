@@ -57,7 +57,7 @@ const EditIcon = styled(Link)`
   position: absolute;
   top: 10px;
   right: 10px;
-  color: #FF1800;
+  color: #ff1800;
   font-size: 1.5rem;
   z-index: 1;
 `;
@@ -83,6 +83,15 @@ function ListingCard({
   editUrl,
   status,
 }: ListingCardProps) {
+  const showStatusText = () => {
+    if (typeof (status) !== 'boolean') {
+      return null;
+    }
+    const statusText = status ? 'Active' : 'Inactive';
+
+    return <StatusText status={status as boolean}>{statusText}</StatusText>;
+  };
+
   return (
     <Col xs={6} lg={4} key={listingId}>
       <CardLink to={`/app/business-listings/detail/${listingId}`}>
@@ -96,9 +105,7 @@ function ListingCard({
             <StyledCardImg variant="top" src={businessLogo} />
           </ImageWrapper>
           <Card.Body className="px-0 py-10">
-            <StatusText status={status as boolean}>
-              {status ? 'Active' : 'Inactive'}
-            </StatusText>
+            {showStatusText()}
             <CardTitle>{title}</CardTitle>
             <StyledCardText>{overview}</StyledCardText>
           </Card.Body>
@@ -121,7 +128,7 @@ function ListingCard({
 
 ListingCard.defaultProps = {
   editUrl: '',
-  status: false,
+  status: null,
 };
 
 export default ListingCard;
