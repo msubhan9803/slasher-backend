@@ -40,7 +40,7 @@ type Props = {
 function Pricing({ listingTypes, setValue }: Props) {
   useEffect(() => {
     if (listingTypes.length > 0) {
-      setValue('listingType', listingTypes[0]._id);
+      setValue('listingType', listingTypes[0].name);
     }
   }, [listingTypes]);
 
@@ -50,7 +50,7 @@ function Pricing({ listingTypes, setValue }: Props) {
 
       {
         listingTypes?.map((listingType) => (
-          <StyledCard key={listingType._id}>
+          <StyledCard key={listingType.name}>
             <CardHeader>
               <h2>
                 <span className="fw-bold fs-1" style={{ color: '#FF1800', marginRight: '4px' }}>

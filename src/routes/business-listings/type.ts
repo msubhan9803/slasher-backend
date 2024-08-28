@@ -27,10 +27,15 @@ export type TrailerLinks = {
   trailer3: string;
 };
 
+export enum ListingName {
+  LISTING1 = 'listing_1',
+  LISTING2 = 'listing_2',
+}
+
 export type BusinessListing = {
   _id: string | null;
   businesstype: BusinessType | null | string;
-  listingType: string | null;
+  listingType: ListingName | null;
   image: File | null | undefined | string;
   businessLogo?: string;
   coverPhoto?: File | null | undefined | string;
@@ -63,13 +68,7 @@ export type BusinessListing = {
 
 export type BusinessListingKeys = keyof BusinessListing;
 
-export enum ListingName {
-  LISTING1 = 'listing_1',
-  LISTING2 = 'listing_2',
-}
-
 export type BusinessListingType = {
-  _id: string;
   name: ListingName;
   label: string;
   features: string[];
