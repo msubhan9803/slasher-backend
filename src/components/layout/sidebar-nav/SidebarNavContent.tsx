@@ -12,6 +12,7 @@ import { enableDevFeatures } from '../../../env';
 import SticyBannerAdSpaceCompensation from '../../SticyBannerAdSpaceCompensation';
 import { useAppSelector } from '../../../redux/hooks';
 import { UserType } from '../../../types';
+import useMyListings from '../../../hooks/businessListing/useMyListings';
 
 const MAX_ALLOWED_COMING_SOON_ITEMS_IN_MENU = 1;
 
@@ -113,6 +114,7 @@ menuListItems = menuListItems.concat(bottomMenuListItems);
 function SidebarNavContent({ onToggleCanvas }: Props) {
   const userData = useAppSelector((state) => state.user);
   const listingsFlat = useAppSelector((state) => state.listings.listingsFlat);
+  useMyListings();
 
   const filteredRoutes = useMemo(() => {
     let tempMenuList: MenuListItem[] = [...menuListItems];
