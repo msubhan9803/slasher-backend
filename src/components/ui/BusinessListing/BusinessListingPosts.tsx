@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable max-lines */
 import React, { useCallback, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -40,15 +41,14 @@ export default function BusinessListingPosts({ businessListingRef }: Props) {
   const loginUserData = useAppSelector((state) => state.user.user);
   const [showReportModal, setShowReportModal] = useState(false);
   const [dropDownValue, setDropDownValue] = useState('');
-  const [errorMessage, setErrorMessage] = useState<string[]>();
   const [editModalErrorMessage, setEditModalErrorMessage] = useState<string[]>([]);
   const [deleteImageIds, setDeleteImageIds] = useState<any>([]);
-  const [noMoreData, setNoMoreData] = useState<Boolean>(false);
+  const [noMoreData] = useState<Boolean>(false);
   const [postContent, setPostContent] = useState<string>('');
   const [postImages, setPostImages] = useState<string[]>([]);
   const [postId, setPostId] = useState<string>('');
   const [postUserId, setPostUserId] = useState<string>('');
-  const [requestAdditionalPosts, setRequestAdditionalPosts] = useState<boolean>(false);
+  const [, setRequestAdditionalPosts] = useState<boolean>(false);
   const [ProgressButton, setProgressButtonStatus] = useProgressButton();
   const [friendShipStatusModal, setFriendShipStatusModal] = useState<boolean>(false);
   const [friendStatus, setFriendStatus] = useState<FriendRequestReaction | null>(null);
@@ -58,13 +58,11 @@ export default function BusinessListingPosts({ businessListingRef }: Props) {
     posts,
     setPosts,
     loadingListingPosts,
-    listingPostsError,
     refetchListingPosts,
   } = useListingPosts({ businessListingRef });
 
   const {
     listingDetail,
-    loadingListingDetail,
     listingDetailError,
   } = useListingDetail(businessListingRef as string);
 

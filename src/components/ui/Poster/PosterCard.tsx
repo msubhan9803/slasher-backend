@@ -1,9 +1,7 @@
-import React from 'react';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Card } from 'react-bootstrap';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import LikeIconButton from './LikeIconButton';
 import { WorthWatchingStatus } from '../../../types';
@@ -72,17 +70,6 @@ const StyledPoster = styled.div`
     object-fit: cover;
     box-shadow: 0 0 0 1px var(--poster-border-color);
   }
-`;
-const EditIcon = styled(Link)`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #FF1800;
-  font-size: 1.5rem;
-`;
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  stroke: #000;
-  stroke-width: 10px;
 `;
 
 const StatusText = styled.div<{ status: boolean }>`

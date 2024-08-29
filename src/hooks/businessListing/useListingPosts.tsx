@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { getBusinessListingPosts } from '../../api/feed-posts';
 import { Post } from '../../types';
 import { getBusinessListingSubroutesCache } from '../../routes/business-listings/businessListingSubroutesCache';

@@ -1,9 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import RoundButtonLink from '../RoundButtonLink';
 
 const StyledCard = styled(Card)`
@@ -51,19 +49,6 @@ const StatusText = styled.div<{ status: boolean }>`
   color: ${({ status }) => (status ? 'green' : 'red')};
   font-weight: bold;
   margin-top: 10px;
-`;
-
-const EditIcon = styled(Link)`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #ff1800;
-  font-size: 1.5rem;
-  z-index: 1;
-`;
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  stroke: #fff;
-  stroke-width: 10px;
 `;
 
 interface ListingCardProps {

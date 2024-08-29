@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ContentPageWrapper, ContentSidbarWrapper } from '../../../components/layout/main-site-wrapper/authenticated/ContentWrapper';
 import RightSidebarWrapper from '../../../components/layout/main-site-wrapper/authenticated/RightSidebarWrapper';
@@ -14,8 +14,8 @@ function SlasherIndieBooks() {
   const [showKeys, setShowKeys] = useState(false);
   const [search, setSearch] = useState<string>('');
   const [filteredBooks, setFilteredBooks] = useState<Book[] | any>([]);
-  const [sortVal, setSortVal] = useState(searchParams.get('sort') || 'name');
-  const [key, setKey] = useState(searchParams.get('startsWith')?.toLowerCase() || '');
+  const [sortVal] = useState(searchParams.get('sort') || 'name');
+  const [key] = useState(searchParams.get('startsWith')?.toLowerCase() || '');
 
   const searchData = useCallback(() => {
     let searchResult;

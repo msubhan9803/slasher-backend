@@ -128,7 +128,7 @@ function SidebarNavContent({ onToggleCanvas }: Props) {
     }
 
     return tempMenuList;
-  }, [listingsFlat]);
+  }, [listingsFlat, userData]);
 
   return (
     <Nav>

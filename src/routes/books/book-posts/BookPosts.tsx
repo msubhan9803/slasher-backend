@@ -1,40 +1,15 @@
-import React, { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import PostFeed from '../../../components/ui/post/PostFeed/PostFeed';
+import { useState } from 'react';
 import ReportModal from '../../../components/ui/ReportModal';
-import postImage from '../../../images/book-post-image.jpg';
-import CustomCreatePost from '../../../components/ui/CustomCreatePost';
 import { BookData, BookType } from '../../../types';
 import BusinessListingPosts from '../../../components/ui/BusinessListing/BusinessListingPosts';
-
-const postData = [
-  {
-    id: 1,
-    userName: 'Aly khan',
-    profileImage: 'https://i.pravatar.cc/300?img=12',
-    postDate: '2023-07-13T09:01:52.844Z',
-    message: 'A retired cop battles a murderer who never gets his hands dirty when he kills. And a man stumbles into a league of immortal assassins, who kill to protect their.',
-    images: [{ description: '1', image_path: postImage, _id: '6677' }],
-    likeIcon: false,
-  },
-];
-const selfOptions = ['Edit', 'Delete'];
-const viewerOptions = ['Report'];
 
 type Props = {
   bookData: BookData;
 };
 
 function BookPosts({ bookData }: Props) {
-  const [searchParams] = useSearchParams();
-  const queryParam = searchParams.get('view');
-  const popoverOptions = queryParam === 'self' ? selfOptions : viewerOptions;
   const [show, setShow] = useState(false);
-  const [dropDownValue, setDropDownValue] = useState('');
-  const handlePopoverOption = (value: string) => {
-    setShow(true);
-    setDropDownValue(value);
-  };
+  const [dropDownValue] = useState('');
 
   return (
     <>

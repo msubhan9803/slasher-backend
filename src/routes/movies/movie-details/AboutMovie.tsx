@@ -31,7 +31,6 @@ import { generateAmazonAffiliateLinkForMovie } from '../../../utils/text-utils';
 import TpdAd from '../../../components/ui/TpdAd';
 import { tpdAdSlotIdZ } from '../../../utils/tpd-ad-slot-ids';
 import getYouTubeEmbedId from '../../../utils/youtube-embed-id-utils';
-import BusinessListingPosts from '../../../components/ui/BusinessListing/BusinessListingPosts';
 
 interface MovieIconProps {
   label: string;

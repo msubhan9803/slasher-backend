@@ -1,18 +1,15 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ContentSidbarWrapper, ContentPageWrapper } from '../../components/layout/main-site-wrapper/authenticated/ContentWrapper';
 import RightSidebarWrapper from '../../components/layout/main-site-wrapper/authenticated/RightSidebarWrapper';
 import MainListingWrapper from '../../components/ui/MyListings/MainListingWrapper';
-import BooksHeader from '../books/BooksHeader';
 import { Book } from '../books/components/BookProps';
 import { myBooks } from '../books/components/booksList';
-import BooksRightSideNav from '../books/components/BooksRightSideNav';
 import RightSidebarSelf from '../../components/layout/right-sidebar-wrapper/right-sidebar-nav/RightSidebarSelf';
 import ScrollToTop from '../../components/ScrollToTop';
 
 function MyListings() {
-  const [showKeys, setShowKeys] = useState(false);
-  const [search, setSearch] = useState<string>('');
-  const [filteredBooks, setFilteredBooks] = useState<Book[] | any>(myBooks);
+  const [search] = useState<string>('');
+  const [, setFilteredBooks] = useState<Book[] | any>(myBooks);
 
   const searchData = useCallback(() => {
     let searchResult;

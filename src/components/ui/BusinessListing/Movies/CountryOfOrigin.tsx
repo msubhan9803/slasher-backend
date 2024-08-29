@@ -1,5 +1,5 @@
 import { Col, Form } from 'react-bootstrap';
-import { Controller, UseFormRegister } from 'react-hook-form';
+import { UseFormRegister } from 'react-hook-form';
 import { BusinessListingKeys, BusinessListing } from '../../../../routes/business-listings/type';
 
 type Props = {

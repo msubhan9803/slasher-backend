@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import PosterCardList from '../../../components/ui/Poster/PosterCardList';
+import { useCallback, useEffect, useState } from 'react';
 import { myMovies } from '../components/MovieList';
 import { MoviesProps } from '../components/MovieProps';
 import MoviesHeader from '../MoviesHeader';
@@ -8,7 +7,7 @@ import MainListingWrapper from '../../../components/ui/MyListings/MainListingWra
 function MyMovies() {
   const [showKeys, setShowKeys] = useState(false);
   const [search, setSearch] = useState<string>('');
-  const [filteredMovies, setFilteredMovies] = useState<MoviesProps[]>(myMovies);
+  const [, setFilteredMovies] = useState<MoviesProps[]>(myMovies);
   const searchData = useCallback(() => {
     let searchResult;
     const newFilter = myMovies;

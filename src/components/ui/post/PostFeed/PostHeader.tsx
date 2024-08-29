@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
 import { Button, Col, Row } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import CustomPopover, { PopoverClickProps } from '../../CustomPopover';
 import UserCircleImage from '../../UserCircleImage';
 import BorderButton from '../../BorderButton';
-import { BusinessListing, BusinessType } from '../../../../routes/business-listings/type';
+import { BusinessListing } from '../../../../routes/business-listings/type';
 
 interface PostHeaderProps {
   userName: string;

@@ -8,7 +8,7 @@ type Props = {
   isVisible: boolean;
 };
 
-export default function Trailers({ name, register, isVisible }: Props) {
+export default function Trailers({ register, isVisible }: Props) {
   if (!isVisible) {
     return null;
   }

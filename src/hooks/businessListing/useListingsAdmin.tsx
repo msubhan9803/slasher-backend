@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { fetchListingsAdmin } from '../../api/businessListings';
 import { BusinessListing, ListingType } from '../../routes/business-listings/type';

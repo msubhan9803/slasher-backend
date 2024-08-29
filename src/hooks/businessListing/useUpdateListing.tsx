@@ -60,7 +60,6 @@ export default function useUpdateListing() {
       setLoading(false);
       handleAfterSuccessfullApi();
     } catch (err: any) {
-      console.log('err.response.data.message: ', err);
       setErrorMessages(err.response.data.message);
       setLoading(false);
     }

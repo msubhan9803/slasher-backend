@@ -475,7 +475,9 @@ function PostFeed({
 
       if (post.movieId.movieImage) {
         posterData.poster_path = post.movieId.movieImage;
+        console.log('here... .🌺🌺🌺🌺: ', posterData);
       }
+      console.log('here... ✅✅✅✅: ', posterData);
 
       imageVideoList.splice(0, 0, { posterData });
     }

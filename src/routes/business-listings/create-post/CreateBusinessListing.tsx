@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable max-lines */
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
@@ -49,7 +50,7 @@ function CreateBusinessListing() {
   const listingId = searchParams.get('id') as string;
   const listingType: ListingType = searchParams.get('type') as ListingType;
   const listingConfig = ListingConfig[listingType];
-  const [charCount, setCharCount] = useState<number>(0);
+  const [charCount] = useState<number>(0);
   const [hasPhysicalPresence, setHasPhysicalPresence] = useState(false);
 
   const {
@@ -68,7 +69,6 @@ function CreateBusinessListing() {
   const { listingTypes } = useListingTypes();
 
   const {
-    control,
     register,
     handleSubmit,
     setValue,

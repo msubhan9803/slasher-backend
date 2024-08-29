@@ -84,15 +84,13 @@ const toProperCase = (str: string) => str
 
 export default function LisitingManagementAdmin() {
   const userData = useAppSelector((state) => state.user);
-  const [businessType, setBusinessType] = useState<ListingType | null>(null);
+  const [businessType] = useState<ListingType | null>(null);
   const {
-    listings, loadingListings, listingError, refetch: refetchListings,
+    listings, refetch: refetchListings,
   } = useListingsAdmin(
     businessType,
   );
-  const {
-    toggleStatus, loading, errorMessages, success,
-  } = useToggleListingStatus();
+  const { toggleStatus } = useToggleListingStatus();
 
   const rows = useMemo(() => listings.map((listing) => ({
     id: listing._id,

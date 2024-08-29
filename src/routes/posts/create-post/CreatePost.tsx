@@ -22,9 +22,7 @@ import { deletePageStateCache } from '../../../pageStateCache';
 import SticyBannerAdSpaceCompensation from '../../../components/SticyBannerAdSpaceCompensation';
 import useMyListings from '../../../hooks/businessListing/useMyListings';
 import CustomSelect from '../../../components/filter-sort/CustomSelect';
-import {
-  MD_MEDIA_BREAKPOINT, LG_MEDIA_BREAKPOINT, XL_MEDIA_BREAKPOINT, XXL_MEDIA_BREAKPOINT,
-} from '../../../constants';
+import { MD_MEDIA_BREAKPOINT } from '../../../constants';
 
 const SelectContainer = styled.div`
   width: 240px;
@@ -63,7 +61,7 @@ function CreatePost() {
   const paramsBookId = searchParams.get('bookId');
   const dispatch = useAppDispatch();
 
-  const { listingsFlat, loadingListings } = useMyListings();
+  const { listingsFlat } = useMyListings();
 
   const addPost = async () => {
     /* eslint no-useless-escape: 0 */

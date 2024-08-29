@@ -10,9 +10,9 @@ function SlasherIndieMovies() {
   const [showKeys, setShowKeys] = useState(false);
   const [search, setSearch] = useState<string>('');
   const [searchParams] = useSearchParams();
-  const [key, setKey] = useState(searchParams.get('startsWith')?.toLowerCase() || '');
+  const [key] = useState(searchParams.get('startsWith')?.toLowerCase() || '');
   const [filteredMovies, setFilteredMovies] = useState<MoviesProps[]>([]);
-  const [sortVal, setSortVal] = useState(searchParams.get('sort') || 'name');
+  const [sortVal] = useState(searchParams.get('sort') || 'name');
 
   const searchData = useCallback(() => {
     let searchResult;

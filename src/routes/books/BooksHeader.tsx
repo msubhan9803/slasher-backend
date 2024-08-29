@@ -1,10 +1,8 @@
-import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import FilterModal from '../../components/filter-sort/FilterModal';
 import FilterOptions from '../../components/filter-sort/FilterOptions';
 import CustomSelect from '../../components/filter-sort/CustomSelect';
 import CustomSearchInput from '../../components/ui/CustomSearchInput';
-import RoundButton from '../../components/ui/RoundButton';
 import TabLinks from '../../components/ui/Tabs/TabLinks';
 import { enableDevFeatures } from '../../env';
 import CreateBusinessListingButton from '../../components/layout/right-sidebar-wrapper/components/CreateBusinessListingButton';
