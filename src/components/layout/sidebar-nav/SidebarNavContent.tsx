@@ -1,4 +1,4 @@
-import React from 'react';
+import { useMemo } from 'react';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { Nav } from 'react-bootstrap';
 import SidebarNavItem from './SidebarNavItem';
@@ -112,18 +112,25 @@ menuListItems = menuListItems.concat(bottomMenuListItems);
 
 function SidebarNavContent({ onToggleCanvas }: Props) {
   const userData = useAppSelector((state) => state.user);
+  const listingsFlat = useAppSelector((state) => state.listings.listingsFlat);
 
-  const filterAdminRoutes = (routesList: MenuListItem[]) => {
+  const filteredRoutes = useMemo(() => {
+    let tempMenuList: MenuListItem[] = [...menuListItems];
+
     if (userData.user.userType !== UserType.Admin) {
-      return routesList.filter((item) => !item.isAdmin);
+      tempMenuList = [...menuListItems.filter((item) => !item.isAdmin)];
     }
 
-    return routesList;
-  };
+    if (listingsFlat.length === 0) {
+      tempMenuList = [...tempMenuList.filter((item) => item.label !== 'My Listings')];
+    }
+
+    return tempMenuList;
+  }, [listingsFlat]);
 
   return (
     <Nav>
-      {filterAdminRoutes(menuListItems).map((menuItem) => (
+      {filteredRoutes.map((menuItem) => (
         <SidebarNavItem
           id={menuItem.id}
           key={menuItem.id}

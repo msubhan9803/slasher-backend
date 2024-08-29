@@ -52,12 +52,12 @@ function CreateBusinessListing() {
   const [hasPhysicalPresence, setHasPhysicalPresence] = useState(false);
 
   const {
-    createBusinessListing, errorMessages,
+    createBusinessListing, errorMessages, loading: createBusinessLoading,
   } = useCreateListing();
 
   const {
     updateBusinessListing,
-    errorMessages: updateBusinessListingErrors,
+    errorMessages: updateBusinessListingErrors, loading: updateBusinessLoading,
   } = useUpdateListing();
 
   const { listingDetail } = useListingDetailForEdit(listingId as string);
@@ -395,7 +395,7 @@ function CreateBusinessListing() {
 
           <Row>
             <Col md={4} className="mt-4">
-              <RoundButton className="w-100 fs-3" size="lg" type="submit">
+              <RoundButton className="w-100 fs-3" size="lg" type="submit" disabled={createBusinessLoading || updateBusinessLoading}>
                 Submit
               </RoundButton>
             </Col>

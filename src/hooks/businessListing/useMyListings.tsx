@@ -19,13 +19,18 @@ export default function useMyListings() {
   const [loadingListings, setLoadingListings] = useState<boolean>(true);
   const [listingError, setListingError] = useState<string | null>(null);
 
+  const fetchMyListingApi = async () => {
+    const { data } = await fetchMyListings({ userRef: userRef as string });
+    return data as MyListingResponse;
+  };
+
   const fetchBusinessListings = async () => {
     setLoadingListings(true);
     setListingError(null);
 
     try {
-      const { data } = await fetchMyListings({ userRef: userRef as string });
-      setListings(data as MyListingResponse);
+      const data = await fetchMyListingApi();
+      setListings(data);
     } catch (err: any) {
       setListingError('Failed to fetch listings');
     } finally {
@@ -42,5 +47,6 @@ export default function useMyListings() {
     listingsFlat: listings ? Object.values(listings as object).flat() as BusinessListing[] : [],
     loadingListings,
     listingError,
+    fetchMyListingApi,
   };
 }
