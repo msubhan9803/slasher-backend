@@ -7,6 +7,7 @@ import { Book } from '../books/components/BookProps';
 import { myBooks } from '../books/components/booksList';
 import BooksRightSideNav from '../books/components/BooksRightSideNav';
 import RightSidebarSelf from '../../components/layout/right-sidebar-wrapper/right-sidebar-nav/RightSidebarSelf';
+import ScrollToTop from '../../components/ScrollToTop';
 
 function MyListings() {
   const [showKeys, setShowKeys] = useState(false);
@@ -32,6 +33,8 @@ function MyListings() {
 
   return (
     <ContentSidbarWrapper>
+      <ScrollToTop />
+
       <ContentPageWrapper>
         <MainListingWrapper />
       </ContentPageWrapper>

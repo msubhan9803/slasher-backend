@@ -41,6 +41,7 @@ import useListingDetailForEdit from '../../../hooks/businessListing/useListingDe
 import useBusinessListingForm from '../../../hooks/businessListing/useBusinessListingForm';
 import useUpdateListingThumbnailOrCoverPhoto from '../../../hooks/businessListing/useUpdateListingThumbnailOrCoverPhoto';
 import useUpdateListing from '../../../hooks/businessListing/useUpdateListing';
+import ScrollToTop from '../../../components/ScrollToTop';
 
 function CreateBusinessListing() {
   const [searchParams] = useSearchParams();
@@ -198,6 +199,7 @@ function CreateBusinessListing() {
 
   return (
     <div>
+      <ScrollToTop />
       <Row className="d-md-none pt-2 position-relative">
         <div className="position-absolute start-0 top-0">
           <FontAwesomeIcon
