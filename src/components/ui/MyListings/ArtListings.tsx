@@ -29,7 +29,7 @@ export default function ArtListings({ listings }: Props) {
       <div className="m-md-2">
         <Container fluid>
           <Row className="g-3">
-            {listings && listings.length > 0 ? (
+            {listings && listings.length > 0 && (
               listings.map((listing) => (
                 <ListingCard
                   key={listing._id}
@@ -40,10 +40,7 @@ export default function ArtListings({ listings }: Props) {
                   editUrl={`/app/business-listings/create?id=${listing._id}&type=${BusinessType.ARTIST}`}
                   status={listing.isActive as boolean}
                 />
-              ))
-            ) : (
-              <p className="text-light fw-bold text-center">No Data</p>
-            )}
+              )))}
           </Row>
         </Container>
       </div>

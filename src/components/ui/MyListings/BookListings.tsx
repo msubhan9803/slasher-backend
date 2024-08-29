@@ -26,7 +26,7 @@ export default function BookListings({ listings }: Props) {
       </div>
 
       <div className="m-md-2">
-        {listings && listings.length > 0 ? (
+        {listings && listings.length > 0 && (
           <MovieOrBookListingList
             dataList={
               listings?.map((listing) => ({
@@ -45,8 +45,6 @@ export default function BookListings({ listings }: Props) {
             type="book"
             editButton
           />
-        ) : (
-          <p className="text-light fw-bold text-center">No Data</p>
         )}
       </div>
     </div>

@@ -198,18 +198,16 @@ function CreateBusinessListing() {
 
   return (
     <div>
-      <Row className="d-md-none pt-2">
-        <Col xs="auto" className="ms-2">
+      <Row className="d-md-none pt-2 position-relative">
+        <div className="position-absolute start-0 top-0">
           <FontAwesomeIcon
             role="button"
             icon={solid('arrow-left-long')}
             size="2x"
             onClick={() => navigate(-1)}
           />
-        </Col>
-        <Col>
-          <h1 className="text-center mb-0 h2">{listingConfig?.shortTitle}</h1>
-        </Col>
+        </div>
+        <h1 className="text-center mb-0 h2 w-100">{listingConfig?.shortTitle}</h1>
       </Row>
 
       <div className="bg-dark px-md-4 py-4 py-md-5 rounded-3 bg-mobile-transparent">
